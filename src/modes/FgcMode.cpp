@@ -19,7 +19,7 @@ void FgcMode::UpdateDigitalOutputs(InputState &inputs, OutputState &outputs) {
     outputs.dpadLeft = inputs.left;
     outputs.dpadRight = inputs.right;
     outputs.dpadDown = inputs.down;
-    outputs.dpadUp = inputs.mod_x || inputs.c_up || inputs.up2;
+    outputs.dpadUp = inputs.mod_x || inputs.mod_y || inputs.up2;
 
     // Menu keys
     outputs.start = inputs.start;
@@ -35,8 +35,14 @@ void FgcMode::UpdateDigitalOutputs(InputState &inputs, OutputState &outputs) {
     // Right hand top row
     outputs.x = inputs.r;
     outputs.y = inputs.y;
-    outputs.buttonR = inputs.lightshield;
-    outputs.buttonL = inputs.midshield;
+    outputs.buttonL = inputs.lightshield;
+    outputs.buttonR = inputs.midshield;
+
+    // SF6 Specific Stuff
+
+    // SF6 Parry on SSBM A and L
+    outputs.leftStickClick = inputs.l || inputs.a;
+    outputs.rightStickClick = inputs.c_up;
 }
 
 void FgcMode::UpdateAnalogOutputs(InputState &inputs, OutputState &outputs) {
