@@ -5,10 +5,11 @@
 #include "modes/DefaultKeyboardMode.hpp"
 #include "modes/FgcMode.hpp"
 #include "modes/Melee20Button.hpp"
+#include "modes/MeleeWASD.hpp"
 #include "modes/ProjectM.hpp"
 #include "modes/RivalsOfAether.hpp"
+#include "modes/StreetFighter6.hpp"
 #include "modes/Ultimate.hpp"
-#include "modes/MeleeWASD.hpp"
 
 extern KeyboardMode *current_kb_mode;
 

@@ -1,25 +1,25 @@
-#include "modes/FgcMode.hpp"
+#include "modes/StreetFighter6.hpp"
 
-FgcMode::FgcMode(socd::SocdType socd_type) : ControllerMode(socd_type) {
+StreetFighter6::StreetFighter6(socd::SocdType socd_type) : ControllerMode(socd_type) {
     _socd_pair_count = 1;
     _socd_pairs = new socd::SocdPair[_socd_pair_count]{
         socd::SocdPair{&InputState::left, &InputState::right},
     };
 }
 
-void FgcMode::HandleSocd(InputState &inputs) {
+void StreetFighter6::HandleSocd(InputState &inputs) {
     if (inputs.down && (inputs.mod_x || inputs.c_up)) {
         inputs.down = false;
     }
     InputMode::HandleSocd(inputs);
 }
 
-void FgcMode::UpdateDigitalOutputs(InputState &inputs, OutputState &outputs) {
+void StreetFighter6::UpdateDigitalOutputs(InputState &inputs, OutputState &outputs) {
     // Directions
     outputs.dpadLeft = inputs.left;
     outputs.dpadRight = inputs.right;
     outputs.dpadDown = inputs.down;
-    outputs.dpadUp = inputs.mod_x || inputs.c_up || inputs.up2;
+    outputs.dpadUp = inputs.mod_x || inputs.mod_y || inputs.up2;
 
     // Menu keys
     outputs.start = inputs.start;
@@ -35,11 +35,17 @@ void FgcMode::UpdateDigitalOutputs(InputState &inputs, OutputState &outputs) {
     // Right hand top row
     outputs.x = inputs.r;
     outputs.y = inputs.y;
-    outputs.buttonR = inputs.lightshield;
-    outputs.buttonL = inputs.midshield;
+    outputs.buttonL = inputs.lightshield;
+    outputs.buttonR = inputs.midshield;
+
+    // SF6 Specific Stuff
+
+    // SF6 Parry on SSBM A and L
+    outputs.leftStickClick = inputs.a;
+    outputs.rightStickClick = inputs.c_up;
 }
 
-void FgcMode::UpdateAnalogOutputs(InputState &inputs, OutputState &outputs) {
+void StreetFighter6::UpdateAnalogOutputs(InputState &inputs, OutputState &outputs) {
     outputs.leftStickX = 128;
     outputs.leftStickY = 128;
     outputs.rightStickX = 128;
