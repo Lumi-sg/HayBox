@@ -19,7 +19,7 @@ void StreetFighter6::UpdateDigitalOutputs(InputState &inputs, OutputState &outpu
     outputs.dpadLeft = inputs.left;
     outputs.dpadRight = inputs.right;
     outputs.dpadDown = inputs.down;
-    outputs.dpadUp = inputs.mod_x || inputs.mod_y || inputs.up2;
+    outputs.dpadUp = inputs.mod_x || inputs.up2;
 
     // Menu keys
     outputs.start = inputs.start;
@@ -35,6 +35,11 @@ void StreetFighter6::UpdateDigitalOutputs(InputState &inputs, OutputState &outpu
     // Right hand top row
     outputs.x = inputs.r;
     outputs.y = inputs.y;
+    /*
+    The following are inverted to make menu traversal easier, requires rebinding in game.
+    Potentially not worth the hassle if user plays on new setups often (such as frequenting
+    tournaments)
+    */
     outputs.buttonL = inputs.lightshield;
     outputs.buttonR = inputs.midshield;
 
