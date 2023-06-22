@@ -133,7 +133,9 @@ The default controller mode button combinations are:
 - Mod X + Start + Left - Project M/Project+ mode
 - Mod X + Start + Down - Ultimate mode
 - Mod X + Start + Right - FGC mode (Hitbox style fighting game layout)
+- Mod Y + Start + Right - Streetfighter 6 mode (Same as FGC mode with changes for SF6 specific techniques)
 - Mod X + Start + B - Rivals of Aether mode
+
 
 Default keyboard mode button combinations (only available when using DInput backend, **not** with XInput):
 - Mod Y + Start + L - Default keyboard mode
