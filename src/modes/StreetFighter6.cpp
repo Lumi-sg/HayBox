@@ -35,19 +35,13 @@ void StreetFighter6::UpdateDigitalOutputs(InputState &inputs, OutputState &outpu
     // Right hand top row
     outputs.x = inputs.r;
     outputs.y = inputs.y;
-    /*
-    The following are inverted to make menu traversal easier, requires rebinding in game.
-    Potentially not worth the hassle if user plays on new setups often (such as frequenting
-    tournaments)
-    */
+
+    // Inverted to make menu traversal easier, requires rebinding in game
     outputs.buttonL = inputs.lightshield;
     outputs.buttonR = inputs.midshield;
 
-    // SF6 Specific Stuff
-
-    // SF6 Parry on SSBM A and L
+    // Dedicated parry button
     outputs.leftStickClick = inputs.a;
-    outputs.rightStickClick = inputs.c_up;
 }
 
 void StreetFighter6::UpdateAnalogOutputs(InputState &inputs, OutputState &outputs) {
