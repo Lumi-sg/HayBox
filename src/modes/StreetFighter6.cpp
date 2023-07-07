@@ -41,7 +41,7 @@ void StreetFighter6::UpdateDigitalOutputs(InputState &inputs, OutputState &outpu
     outputs.buttonR = inputs.midshield;
 
     // Dedicated parry button
-    outputs.leftStickClick = inputs.a;
+    outputs.rightStickClick = inputs.a;
 }
 
 void StreetFighter6::UpdateAnalogOutputs(InputState &inputs, OutputState &outputs) {
